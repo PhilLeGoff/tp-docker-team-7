@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  client:
+    build:
+      context: ./client
+    image: client
+    container_name: client-srv
+    ports:
+      - "3000:3000"
+
+  posts:
+    build:
+      context: ./posts
+    image: posts
+    container_name: posts-srv
+    ports:
+      - "4000:4000"
+
+  comments:
+    build:
+      context: ./comments
+    image: comments
+    container_name: comments-srv
+    ports:
+      - "4001:4001"
+
+  query:
+    build:
+      context: ./query
+    image: query
+    container_name: query-srv
+    ports:
+      - "4002:4002"
+
+  moderation:
+    build:
+      context: ./moderation
+    image: moderation
+    container_name: moderation-srv
+    ports:
+      - "4003:4003"
+
+  event-bus:
+    build:
+      context: ./event-bus
+    image: event-bus
+    container_name: event-bus-srv
+    ports:
+      - "4005:4005"
+
+networks:
+  default:
+    driver: bridge
