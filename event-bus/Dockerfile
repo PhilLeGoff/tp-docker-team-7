@@ -2,9 +2,11 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY package*.json . 
+COPY package.json ./
 RUN npm install
 
 COPY . .
 
-CMD ["node", "index.js"]
+EXPOSE 4005
+
+CMD ["npm", "start"]
