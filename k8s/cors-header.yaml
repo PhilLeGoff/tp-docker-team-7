@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cors-headers
+  namespace: default
+data:
+  Access-Control-Allow-Origin: "*"
+  Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+  Access-Control-Allow-Headers: "Authorization, Content-Type"
